@@ -5,8 +5,8 @@ import lv.lvt.treeexamples.utils.Position;
 public class Food {
     private Position position;
 
-    private int width=16;
-    private int height=16;
+    private int width=24;
+    private int height=24;
 
     public Food(int x, int y) {
         position = new Position(x, y);
@@ -21,11 +21,9 @@ public class Food {
     public void setWidth(int width) {
         this.width = width;
     }
-
     public int getHeight() {
         return height;
     }
-
     public void setHeight(int height) {
         this.height = height;
     }
