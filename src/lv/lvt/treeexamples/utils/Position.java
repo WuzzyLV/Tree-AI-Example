@@ -22,6 +22,9 @@ public class Position {
         this.y = y;
     }
 
+    public int between(Position pos) {
+        return (int) Math.sqrt(Math.pow(pos.getX() - x, 2) + Math.pow(pos.getY() - y, 2));
+    }
     public boolean equals(Position obj) {
         return obj.getX() == x && obj.getY() == y;
     }

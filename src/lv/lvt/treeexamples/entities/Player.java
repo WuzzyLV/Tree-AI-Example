@@ -24,6 +24,9 @@ public class Player {
         calculateView();
     }
 
+    public Position getPosition() {
+        return currentPos;
+    }
     public int getHeight() {
         return height;
     }
@@ -125,5 +128,4 @@ public class Player {
                 break;
         }
     }
-
 }

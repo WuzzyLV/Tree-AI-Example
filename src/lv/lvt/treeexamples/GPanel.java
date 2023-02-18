@@ -38,7 +38,7 @@ public class GPanel extends JPanel {
         if (food != null) {
             g.setColor(new Color(112, 36, 234));
             for (Food f : food) {
-                g.fillRoundRect(f.getPos().getX()-f.getWidth()/2, f.getPos().getY()-f.getHeight()/2,
+                g.fillRoundRect(f.getPos().getX()+16, f.getPos().getY()+16,
                         f.getWidth(), f.getHeight(), 45, 45);
             }
         }

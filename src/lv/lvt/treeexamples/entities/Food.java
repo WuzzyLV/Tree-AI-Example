@@ -5,8 +5,8 @@ import lv.lvt.treeexamples.utils.Position;
 public class Food {
     private Position position;
 
-    private int width=15;
-    private int height=15;
+    private int width=16;
+    private int height=16;
 
     public Food(int x, int y) {
         position = new Position(x, y);

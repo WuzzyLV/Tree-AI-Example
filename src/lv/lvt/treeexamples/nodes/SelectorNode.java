@@ -13,8 +13,11 @@ public class SelectorNode extends BehaviorNode {
     public boolean execute() {
         for (BehaviorNode child : children) {
             if (child.execute()) {
+                System.out.println("SelectorNode: " + child.getClass().getSimpleName() + " returned true");
                 return true;
             }
+            System.out.println("SelectorNode: " + child.getClass().getSimpleName() + " returned false");
+
         }
         return false;
     }
