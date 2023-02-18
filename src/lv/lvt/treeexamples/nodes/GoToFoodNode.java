@@ -17,6 +17,7 @@ public class GoToFoodNode extends BehaviorNode {
 
     public boolean execute(Position targetPos) {
         player.setTargetPos(targetPos.getX(), targetPos.getY());
+        player.tick();
         return true;
     }
 }
