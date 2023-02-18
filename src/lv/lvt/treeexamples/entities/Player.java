@@ -1,10 +1,15 @@
 package lv.lvt.treeexamples.entities;
 
+import lv.lvt.treeexamples.AI;
 import lv.lvt.treeexamples.Goals;
 import lv.lvt.treeexamples.utils.Position;
 import lv.lvt.treeexamples.utils.TriangleUtils;
 
+import java.awt.Color;
+
 public class Player {
+    Color color;
+
     private int height;
     private int width;
     private Position currentPos;
@@ -14,13 +19,14 @@ public class Player {
     //array of points in the 2d space for each corner of the view cone first corner is the center of the player
     int[][] viewPoints;
 
-    public Player(int height, int width,int posX, int posY, int rotation) {
+    public Player(int height, int width,int posX, int posY, int rotation, Color color) {
         System.out.println(posX + " " + posY);
         this.height = height;
         this.width = width;
         this.currentPos = new Position(posX, posY);
         this.targetPos = new Position(0, 0);
         this.rotation = rotation;
+        this.color = color;
         calculateView();
     }
 
@@ -47,6 +53,9 @@ public class Player {
     }
     public void setRotation(int rotation) {
         this.rotation = rotation;
+    }
+    public Color getColor() {
+        return color;
     }
     public Position getTargetPos() {
         return targetPos;
@@ -128,4 +137,5 @@ public class Player {
                 break;
         }
     }
+
 }

@@ -16,7 +16,7 @@ public class EatCloseFoodNode extends BehaviorNode {
 
     public boolean execute() {
         for (Food value : food) {
-            if (player.getPosition().between(value.getPos()) == 0) {
+            if (player.getPosition().between(value.getPos()) < 30) {
                 food.remove(value);
                 return true;
             }
