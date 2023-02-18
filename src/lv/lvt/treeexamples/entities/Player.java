@@ -1,5 +1,8 @@
-import utils.Position;
-import utils.TriangleUtils;
+package lv.lvt.treeexamples.entities;
+
+import lv.lvt.treeexamples.Goals;
+import lv.lvt.treeexamples.utils.Position;
+import lv.lvt.treeexamples.utils.TriangleUtils;
 
 public class Player {
     private int height;
@@ -8,6 +11,7 @@ public class Player {
     private Position targetPos;
     private int rotation;
     private Goals goal=Goals.IDLE;
+    //array of points in the 2d space for each corner of the view cone first corner is the center of the player
     int[][] viewPoints;
 
     public Player(int height, int width,int posX, int posY, int rotation) {
@@ -15,6 +19,7 @@ public class Player {
         this.height = height;
         this.width = width;
         this.currentPos = new Position(posX, posY);
+        this.targetPos = new Position(0, 0);
         this.rotation = rotation;
         calculateView();
     }
@@ -40,9 +45,14 @@ public class Player {
     public void setRotation(int rotation) {
         this.rotation = rotation;
     }
-    public void setTargetPos(Position targetPos) {
-        this.targetPos = targetPos;
+    public Position getTargetPos() {
+        return targetPos;
     }
+    public void setTargetPos(int x, int y) {
+        targetPos.setX(x);  targetPos.setY(y);
+        goal=Goals.MOVE;
+    }
+
     public void setGoal(Goals goal) {
         this.goal = goal;
     }
@@ -61,9 +71,9 @@ public class Player {
         );
     }
 
-    void moveStep() {
+    void move() {
         rotation =0;
-        if (currentPos.getX() == targetPos.getX() && currentPos.getY() == targetPos.getY()) {
+        if (currentPos.equals(targetPos)) {
             goal = Goals.IDLE;
             return;
         }
@@ -105,7 +115,7 @@ public class Player {
     public void tick() {
         switch (goal) {
             case MOVE:
-                moveStep();
+                move();
                 break;
             case EATING:
                 eat();

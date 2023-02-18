@@ -1,4 +1,4 @@
-package utils;
+package lv.lvt.treeexamples.utils;
 
 public class Position {
     private int x;
@@ -20,6 +20,10 @@ public class Position {
     }
     public void setY(int y) {
         this.y = y;
+    }
+
+    public boolean equals(Position obj) {
+        return obj.getX() == x && obj.getY() == y;
     }
 }
 
