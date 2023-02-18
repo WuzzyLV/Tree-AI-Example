@@ -44,7 +44,6 @@ public class Main {
         Timer timer = new Timer(30, e -> {
             System.out.println(player.getGoal());
             ai.tick();
-            player.tick();
             panel.repaint();
         });
         timer.start();
