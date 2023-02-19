@@ -52,6 +52,7 @@ public class Main {
 
         AtomicInteger foodCounter = new AtomicInteger();
         Timer timer = new Timer(30, e -> {
+
             for (AI ai : players.values()) {
                 ai.tick();
             }
@@ -68,3 +69,4 @@ public class Main {
 }
 //TODO LIST
 // - make the issue of clipping food properly not jank
+
