@@ -20,7 +20,7 @@ public class Main {
     public static void main(String[] args) {
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(300, 300);
+        frame.setSize(1000, 1000);
 
         HashMap<Player, AI> players = new HashMap<>();
         List<Food> food = new ArrayList<>();
@@ -39,6 +39,7 @@ public class Main {
                 }
                 if (e.getButton() == MouseEvent.BUTTON2) {
                     food.clear();
+                    players.clear();
                 }
                 if (e.getButton() == MouseEvent.BUTTON3) {
                     food.add(new Food(e.getX()-24, e.getY()-24));
