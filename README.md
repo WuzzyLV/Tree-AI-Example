@@ -1,2 +1,2 @@
 # TreeAIExample
-Showing how to use Tree's for AI in a "game" using java swing for a janky renderer
+An example of how you would use the tree data structure to develop AI's in games or similiar, using Java Swing for the GUI
