@@ -28,7 +28,8 @@ public class CanSeeFoodNode extends BehaviorNode {
             }
 
             for (BehaviorNode child : children) {
-                if (child instanceof GoToFoodNode goToFoodNode) {
+                if (child instanceof GoToFoodNode ) {
+                	GoToFoodNode goToFoodNode=(GoToFoodNode) child;
                     if (goToFoodNode.execute(f.getPos())) {
                         return true;
                     }
